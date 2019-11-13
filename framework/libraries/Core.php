@@ -25,7 +25,7 @@
      }
      //Require the current controller class/var_dump('../framework/controllers/'.$this->__currentController);
      require_once '../framework/controllers/'.$this->__currentController.'.php';
-     //Instanciate controller class
+     //Instantiate controller class
      $this->__currentController = new $this->__currentController;
 
      //Check for the method in second array_count_value
@@ -40,7 +40,7 @@
 
      //Get URL params
      $this->__params = $url ? array_values($url) : [];
-     //Call a callbacj with array of params
+     //Call a callback with array of params
      call_user_func_array([$this->__currentController,$this->__currentMethod],$this->__params);
      //Unset index 2
      unset($url[2]);
@@ -59,4 +59,4 @@
  }
 
 
-?>
+

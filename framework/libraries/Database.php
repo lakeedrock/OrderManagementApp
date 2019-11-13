@@ -26,7 +26,7 @@
 
       //Create PDO instance
       try {
-        $this->dsn = new PDO($dsn, $this->user, $this->pass, $options);
+        $this->dbh = new PDO($dsn, $this->user, $this->pass, $options);
       } catch (PDOException $e) {
         $this->error = $e->getMessage();
         echo $this->error;
@@ -60,7 +60,7 @@
       $this->statement->bindValues($param,$value,$dataType);
     }
 
-    //Excecute the prepared statement
+    //Execute the prepared statement
     public function excecute(){
       return $this->statement->excecute();
     }
@@ -83,5 +83,3 @@
       return $this->statement->rowCount();
     }
   }
-
-?>
