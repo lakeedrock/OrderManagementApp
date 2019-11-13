@@ -6,8 +6,8 @@ define('APP_URL',dirname(dirname(__FILE__)));
 // Application Name
 define('APP_NAME','PHP_MVC_FRAMEWORK');
 // DB config
-define('DB_HOST', 'YOUR_DB_HOST');
-define('DB_USER', '_YOUR_USER_');
-define('DB_PASS', '_YOUR_PASS_');
-define('DB_NAME', '_YOUR_DB_');
+define('DB_HOST', 'localhost');
+define('DB_USER', 'root');
+define('DB_PASS', 'root');
+define('DB_NAME', 'framework');
 
