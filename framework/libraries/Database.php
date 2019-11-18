@@ -18,7 +18,7 @@
 
     public function __construct(){
       // Set DSN
-      $dsn = 'mysql:host='. $this->host . ';dbname' . $this->dbname;
+      $dsn = 'mysql:host='. $this->host . ';dbname=' . $this->dbname;
       $options = array(
         PDO::ATTR_PERSISTENT => true,
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
@@ -34,7 +34,7 @@
     }
 
     //Prepare Statement With Query
-    public function Query($sql){
+    public function query($sql){
       $this->statement = $this->dbh->prepare($sql);
     }
 
@@ -57,7 +57,7 @@
         }
       }
 
-      $this->statement->bindValues($param,$value,$dataType);
+      $this->statement->bindValue($param,$value,$dataType);
     }
 
     //Execute the prepared statement
@@ -82,4 +82,5 @@
     public function rowCount(){
       return $this->statement->rowCount();
     }
+
   }
