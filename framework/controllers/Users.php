@@ -5,9 +5,6 @@
   class Users extends Controller{
 
   	public function __construct(){
-      if (!(isset($_SESSION['user_id']) && isset($_SESSION['user_email']) && isset($_SESSION['user_name']))) {
-        header('location: '. BASE_URL.'users/login');
-      }
       $this->userModel = $this->model('User');
   	}
 
